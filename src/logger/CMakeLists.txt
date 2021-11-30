@@ -1,10 +1,10 @@
-# binary output path
+## binary output path
 if (NOT LIBRARY_OUTPUT_PATH)
     set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/target/bin/${CMAKE_BUILD_TYPE})
 endif()
 message(STATUS "[logger] LIBRARY_OUTPUT_PATH = " ${LIBRARY_OUTPUT_PATH})
 
-# collect src
+## collect src
 message(STATUS "[logger] aux_source_directory")
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src/ mySRC)
 message(STATUS "[logger] mySRC = " ${mySRC})
@@ -29,10 +29,10 @@ add_library(${myDLIB} SHARED ${mySRC})
 
 target_include_directories(${myDLIB} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc/)
 
-# mySPDLOG_LIBS 是spdlog庫名
+## mySPDLOG_LIBS 是spdlog庫名
 message(STATUS "[logger] mySPDLOG_LIBS = " ${mySPDLOG_LIBS})
 target_link_libraries(${myDLIB} PRIVATE )
 
-# install
-# to do ...
+## install
+## to do ...
 my_install(${myDLIB})
