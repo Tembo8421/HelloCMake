@@ -1,0 +1,12 @@
+#pragma once
+
+#define PROJECT_NAME                "HelloCMake"
+#define PROJECT_VERSION_MAJOR       "1"
+#define PROJECT_VERSION_MINOR       "7"
+#define PROJECT_VERSION_PATCH       "4"
+#define PROJECT_VERSION             "1.7.4"
+
+#define PROJECT_GIT_HASH            "c0f5e43"
+#define PROJECT_GIT_BRANCH          "master"
+
+#define BUILD_TIMESTAMP             "2021-11-30 15:07:59"
