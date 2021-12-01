@@ -38,7 +38,7 @@ message(STATUS "[${my_prj_name}] project name = "       ${PROJECT_NAME})
 message(STATUS "[${my_prj_name}] git branch = "         ${git_branch})
 message(STATUS "[${my_prj_name}] git hash = "           ${git_hash})
 message(STATUS "[${my_prj_name}] project version = "    ${PROJECT_VERSION})
-
+message(STATUS "[${my_prj_name}] project version = "    ${CMAKE_BINARY_DIR})
 
 ## add 3rdparty
 add_subdirectory(3rdparty)

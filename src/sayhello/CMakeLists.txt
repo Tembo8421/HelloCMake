@@ -1,16 +1,23 @@
+## project setting
+set(my_prj_name "sayhello")
+set(lang "CXX")
+set(lang_ver "11")
+project(${my_prj_name} VERSION ${my_prj_ver} LANGUAGES ${lang})
+message(STATUS "[${my_prj_name}] project name = " ${my_prj_name})
+
 ## binary output path
 if (NOT LIBRARY_OUTPUT_PATH)
-    set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/target/lib/${CMAKE_BUILD_TYPE})
+    set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/target/lib/${CMAKE_BUILD_TYPE})
 endif()
-message(STATUS "[sayhello] LIBRARY_OUTPUT_PATH = " ${LIBRARY_OUTPUT_PATH})
+message(STATUS "[${my_prj_name}] LIBRARY_OUTPUT_PATH = " ${LIBRARY_OUTPUT_PATH})
 
 ## collect src
-message(STATUS "[sayhello] aux_source_directory")
-aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src/ mySRC)
-message(STATUS "[sayhello] mySRC = " ${mySRC})
+message(STATUS "[${my_prj_name}] aux_source_directory")
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src mySRC)
+message(STATUS "[${my_prj_name}] mySRC = " ${mySRC})
 
 ## add binary
-set(mySLIB "say-hello")
+set(mySLIB ${my_prj_name})
 add_library(${mySLIB} STATIC ${mySRC})
 
 ## include
